@@ -1,0 +1,19 @@
+site_name: 我的外装大脑  # 网站标题
+theme:
+  name: material        # 使用 Material 主题
+  language: zh          # 界面语言设为中文
+  palette: 
+    - scheme: default   # 浅色模式
+      primary: indigo
+    - scheme: slate     # 深色模式（自动切换）
+      primary: indigo
+  features:
+    - navigation.tabs   # 顶部导航栏
+    - search.suggest    # 搜索补全
+
+# 插件配置（支持数学公式等）
+markdown_extensions:
+  - pymdownx.arithmatex: # 支持 LaTeX 公式渲染
+      generic: true
+  - pymdownx.highlight:   # 代码高亮
+  - pymdownx.superfences: # 支持嵌套代码块
