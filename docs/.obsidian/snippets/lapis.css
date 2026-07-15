@@ -1,0 +1,261 @@
+/* * Obsidian Lapis Theme Snippet
+ * Converted from Typora Theme Lapis (Author - YiNN)
+ */
+
+.theme-light, .theme-dark {
+    /* 核心颜色变量 */
+    --text-normal: #40464f;
+    --text-accent: #4870ac;
+    --text-accent-hover: #a2b6d4;
+    --background-primary: #ffffff;
+    --background-secondary: #f6f8fa; /* Block 背景色 */
+    --background-modifier-border: #eef2f5;
+    
+    /* 字体设置 (英文字体替换为 VS Code 默认风格) */
+    /* 正文英文字体 (VS Code UI 字体) + 原版 Lapis 中文字体 */
+    --font-text: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", 'SourceHanSerifCN', sans-serif;
+    /* 代码/等宽英文字体 (VS Code 编辑区默认代码字体) */
+    --font-monospace: Consolas, "Menlo", "Monaco", "Courier New", monospace;
+
+
+
+    /* 标题颜色 */
+    --h1-color: #4870ac;
+    --h2-color: #ffffff;
+    --h3-color: #4870ac;
+    --h4-color: #4870ac;
+    --h5-color: #4870ac;
+    --h6-color: #4870ac;
+}
+
+/* 基础排版 */
+.markdown-preview-view, .markdown-source-view {
+    font-family: var(--font-text);
+    color: var(--text-normal);
+    line-height: 1.6;
+}
+
+/* ====== 标题样式 (兼容阅读模式和实时预览) ====== */
+.markdown-rendered h1, .cm-s-obsidian .HyperMD-header-1 {
+    text-align: center;
+    color: var(--h1-color) !important;
+    font-family: 'SourceHanSerifCN', serif;
+    font-size: 2em;
+    padding-top: 0.9em;
+    margin-bottom: 1em;
+}
+
+/* 修复 H2 宽度和高度问题 */
+/* 1. 阅读模式下 */
+.markdown-rendered h2 {
+    background-color: var(--text-accent);
+    color: var(--h2-color) !important;
+    width: fit-content; /* 让背景框紧贴文字宽度 */
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-family: 'SourceHanSerifCN', serif;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    line-height: 1.4;
+}
+
+/* 2. 实时预览模式下 */
+.cm-s-obsidian .HyperMD-header-2 {
+    background-color: transparent !important; /* 清除整行的背景色 */
+}
+.cm-s-obsidian .HyperMD-header-2 .cm-header-2 {
+    background-color: var(--text-accent);
+    color: var(--h2-color) !important;
+    padding: 2px 14px;
+    border-radius: 4px;
+    font-family: 'SourceHanSerifCN', serif;
+    line-height: 1.4;
+}
+
+/* 修复 H2 内部加粗或代码的颜色 */
+.markdown-rendered h2 strong, .markdown-rendered h2 code,
+.cm-s-obsidian .HyperMD-header-2 strong, .cm-s-obsidian .HyperMD-header-2 code {
+    color: var(--h2-color) !important;
+    background-color: transparent !important;
+}
+
+/* 其他标题 */
+.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3,
+.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4,
+.markdown-rendered h5, .cm-s-obsidian .HyperMD-header-5,
+.markdown-rendered h6, .cm-s-obsidian .HyperMD-header-6 {
+    color: var(--text-accent) !important;
+    font-family: 'SourceHanSerifCN', serif;
+}
+
+
+
+/* ====== 文本元素 ====== */
+/* ====== 文本元素 (兼容阅读模式和编辑模式) ====== */
+strong, 
+.cm-s-obsidian .cm-strong,
+.cm-s-obsidian .cm-formatting-strong {
+    color: var(--text-accent) !important;
+}
+
+
+/* ====== 斜体文字 (兼容阅读模式和编辑模式) ====== */
+em, 
+.cm-s-obsidian .cm-em,
+.cm-s-obsidian .cm-formatting-em {
+    color: #7e9dcb !important; /* Lapis 浅蓝色 */
+}
+
+/* ====== 文本高亮 (兼容阅读模式和编辑模式) ====== */
+mark,
+.cm-s-obsidian .cm-highlight {
+    background-color: #dcf2f0 !important;
+    padding: 1px 0.15rem;
+    border-radius: 2px;
+    color: inherit;
+}
+
+a {
+    color: var(--text-accent);
+    text-decoration: underline solid;
+    text-underline-offset: 4px;
+}
+
+mark {
+    background-color: #ffffb5c2;
+    padding: 1px 0.15rem;
+    border-radius: 1px;
+}
+
+/* ====== 区块引用 (Blockquote) ====== */
+.theme-light, .theme-dark {
+    --blockquote-border-thickness: 3px;
+    --blockquote-border-color: var(--text-accent);
+    --blockquote-background-color: var(--background-secondary);
+}
+
+/* 1. 阅读模式下的引用样式 */
+.markdown-rendered blockquote {
+    border-left: var(--blockquote-border-thickness) solid var(--blockquote-border-color) !important;
+    background-color: var(--blockquote-background-color) !important;
+    padding: 15px 30px 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9em;
+}
+
+/* 2. 编辑模式（实时预览）下的引用样式 */
+/* 给引用的整行添加背景色 */
+.cm-line.HyperMD-quote {
+    background-color: var(--blockquote-background-color);
+}
+/* 修改编辑模式下前面的 > 符号颜色 */
+.markdown-source-view.mod-cm6 .cm-formatting-quote {
+    color: var(--blockquote-border-color) !important;
+}
+/* 统一编辑模式下的引用文字大小和颜色 */
+.cm-s-obsidian .cm-blockquote {
+    font-size: 0.9em;
+    color: var(--text-normal);
+}
+
+
+
+/* ====== 行内代码和代码块 ====== */
+.markdown-preview-view code, .cm-s-obsidian .cm-inline-code {
+    color: var(--text-accent) !important;
+    background-color: var(--background-secondary) !important;
+    font-family: var(--font-monospace);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 94%;
+}
+
+.markdown-preview-view pre, .cm-s-obsidian .HyperMD-codeblock {
+    background-color: var(--background-secondary) !important;
+    border-radius: 10px;
+    font-family: var(--font-monospace);
+    padding: 1.2rem 0.8rem;
+}
+
+/* ====== 任务列表复选框 ====== */
+input[type=checkbox] {
+    border: 1px solid #a2b6d4 !important;
+    border-radius: 1.2rem !important; /* 原主题是圆形复选框 */
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--background-primary) !important;
+    border-color: var(--text-accent) !important;
+}
+
+/* ====== 分割线 ====== */
+hr {
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+
+
+
+/* ===== Callout 样式 (Nord 主题配色) ====== */
+
+.callout {
+    --callout-radius: 6px;
+    border: none;
+}
+
+/* Info, Note, Todo (Nord Frost - 冰雪蓝) */
+.callout[data-callout="info"],
+.callout[data-callout="note"],
+.callout[data-callout="todo"] {
+    --callout-color: 129, 161, 193; /* Nord 9 */
+}
+
+/* Abstract, Summary (Nord Frost - 深海蓝) */
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+    --callout-color: 94, 129, 172; /* Nord 10 */
+}
+
+/* Tip, Hint (Nord Frost - 极光青) */
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+    --callout-color: 136, 192, 208; /* Nord 8 */
+}
+
+/* Success, Check (Nord Aurora - 极光绿) */
+.callout[data-callout="success"],
+.callout[data-callout="check"] {
+    --callout-color: 163, 190, 140; /* Nord 14 */
+}
+
+/* Question, Help, FAQ (Nord Aurora - 极光紫) */
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+    --callout-color: 180, 142, 173; /* Nord 15 */
+}
+
+/* Warning, Caution, Attention (Nord Aurora - 极光黄) */
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+    --callout-color: 235, 203, 139; /* Nord 13 */
+}
+
+/* Failure, Fail, Missing (Nord Aurora - 极光橙) */
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+    --callout-color: 208, 135, 112; /* Nord 12 */
+}
+
+/* Danger, Error, Bug (Nord Aurora - 极光红) */
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"] {
+    --callout-color: 191, 97, 106; /* Nord 11 */
+}

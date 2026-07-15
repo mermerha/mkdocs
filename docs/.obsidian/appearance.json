@@ -1,0 +1,10 @@
+{
+  "theme": "moonstone",
+  "accentColor": "#62dfd0",
+  "baseFontSize": 16,
+  "baseFontSizeAction": true,
+  "enabledCssSnippets": [
+    "lapis"
+  ],
+  "textFontFamily": ""
+}

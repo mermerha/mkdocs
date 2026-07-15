@@ -1,5 +1,10 @@
-# Welcome to MkDocs
+# Welcome to Mermerha's MkDocs
 
+this is a website for skills and experience
+
+for code and math contemperarily
+
+## MkDocs offical suggestions
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands

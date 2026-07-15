@@ -1,19 +1,74 @@
 site_name: 我的外装大脑  # 网站标题
 theme:
   name: material        # 使用 Material 主题
+
   language: zh          # 界面语言设为中文
-  palette: 
+  palette:              # 颜色主题配置
     - scheme: default   # 浅色模式
-      primary: indigo
+      primary: cyan
+      accent: teal
+      toggle:                         # 切换按钮配置
+        icon: material/weather-sunny  # 切换图标
+        name: Switch to light mode
+
+
     - scheme: slate     # 深色模式（自动切换）
-      primary: indigo
+      primary: cyan
+      accent: teal
+      toggle:
+        icon: material/weather-night  # 切换图标
+        name: Switch to dark mode
+
   features:
     - navigation.tabs   # 顶部导航栏
     - search.suggest    # 搜索补全
+    - navigation.tabs.sticky  # 粘性标签栏
 
-# 插件配置（支持数学公式等）
+  icon:
+    logo: material/library      # 网站图标？？
+
+plugins:
+  - search                      # 搜索插件
+
+
+
+
 markdown_extensions:
-  - pymdownx.arithmatex: # 支持 LaTeX 公式渲染
-      generic: true
-  - pymdownx.highlight:   # 代码高亮
-  - pymdownx.superfences: # 支持嵌套代码块
+  - admonition            # 支持note等警告框
+  - pymdownx.details      # 可折叠内容块
+  - pymdownx.superfences  # 允许内容块嵌套代码
+  - attr_list             # 支持.md-button等按钮样式，允许在 Markdown 元素中添加 HTML 属性和 CSS 类
+  - pymdownx.tabbed:      # 支持标签分块
+      alternate_style: true  # 交替样式
+
+
+  - pymdownx.arithmatex: # 支持 LaTeX 数学公式
+      generic: true      # 通用渲染
+
+  - pymdownx.highlight:  # 代码高亮
+      linenums: true     # 显示行号
+
+
+  - pymdownx.keys        # 允许插入键盘按键++ctrl++alt等
+  - pymdownx.snippets    # 支持插入其他文件？？
+
+  - footnotes            # 支持脚注
+
+  - pymdownx.caret       # 支持插入上标和下标
+  - pymdownx.mark        # 支持高亮文本
+  - pymdownx.tilde       # 支持插入删除线
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg              # 支持插入表情符号
+
+
+
+extra_css:
+   - stylesheets/extra.css  # 自定义样式表
+
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  
+
