@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../%E5%8F%AF%E9%99%8D%E4%BB%B7%E7%9A%84%E4%BA%8C%E9%98%B6%E6%96%B9%E7%A8%8B/">
       
       
-        <link rel="next" href="../../../note/syntax_learn/">
+        <link rel="next" href="../%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
       
       
         
@@ -467,6 +467,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%A8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全微分方程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%AF%E9%99%8D%E4%BB%B7%E7%9A%84%E4%BA%8C%E9%98%B6%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可降价的二阶方程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -571,12 +627,79 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="一阶线性微分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情况一
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情况二
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bernoulli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bernoulli方程
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性微分方程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -778,6 +901,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="一阶线性微分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情况一
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        情况二
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bernoulli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bernoulli方程
+      
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -821,16 +983,60 @@ P|_{t=0}  = P_{0}
 \end{aligned}
 \]</div>
 <p>齐次方程</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="arithmatex">\[
 u = \frac{y}{x}
 \]</div>
+</div>
 <h2 id="_5">一阶线性微分方程</h2>
-<p>一般形式：</p>
+<p><strong>一般形式：</strong></p>
 <div class="arithmatex">\[
 \begin{aligned}
 \frac{dy}{dx} + p(x)y = f(x)
 \end{aligned}
 \]</div>
+<h3 id="_6">情况一</h3>
+<p><span class="arithmatex">\(f(x)\equiv0\)</span>：一阶齐次线性方程
+有：</p>
+<div class="arithmatex">\[
+\frac{dy}{y} = -P(x)dx \implies y = ce^{-\int P(x)dx}(且y = 0是解)
+\]</div>
+<h3 id="_7">情况二</h3>
+<p><span class="arithmatex">\(f(x)\neq 0\)</span>：（变动任意常数法）
+变易常数得到拟设定的函数</p>
+<div class="arithmatex">\[
+\begin{gathered}
+\frac{du}{dx} = f(x)\cdot e^{-\int P(x)dx}\\
+代入有: \frac{du}{dx} = f(x)e^{P(x)dx}(P(x)的项被约去)\\
+\implies通解:u(x) = \int f(x)e^{\int P(x)dx}dx+C
+\end{gathered}
+\]</div>
+<p>进一步得到</p>
+<div class="arithmatex">\[
+y = e^{-\int P(x)dx}\left[ \int f(x)e^{\int{P(x)dx}}+C \right]
+\]</div>
+<p>或者是有积分区间的形式</p>
+<div class="arithmatex">\[
+y(x) = e^{-\int ^{x}_{x_{0}}P(t)dt}\left[ C+\int ^{x}_{x_{0}}f(t)\cdot e^{\int ^{t}_{x_{0}}P(s)ds}dt \right]
+\]</div>
+<h2 id="bernoulli">Bernoulli方程</h2>
+<p><strong>具有形式</strong>：</p>
+<div class="arithmatex">\[
+\frac{dy}{dx} +P(x)\cdot y = f(x)\cdot y^{n}  (n\neq 0,1)
+\]</div>
+<p>同时除以<span class="arithmatex">\(y^{n}\)</span>，得到</p>
+<div class="arithmatex">\[
+y^{-n} \frac{dy}{dx} +y^{1-n}P(x) =f(x)
+\]</div>
+<div class="arithmatex">\[
+\frac{1}{1-n}\frac{dy^{1-n}}{dx} + y^{1-n}P(x) = f(x)\implies \frac{dy^{1-n}}{dx}=(1-n)y^{-n} \frac{dy}{dx}
+\]</div>
+<p>令<span class="arithmatex">\(z = y^{1-n}\)</span>，得到</p>
+<div class="arithmatex">\[
+\frac{dz}{dx} + (1-n)P(x)\cdot z=(1-n)f(x)
+\]</div>
+<p>这样转化为关于z的一阶线性微分方程</p>
 
 
 
